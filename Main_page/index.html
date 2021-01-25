@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz</title>
+</head>
+<body>
+    <header>
+        <div class="block__logo">
+            <a href="">
+            <img src="img/logo_green.svg" alt="Logo">
+            <h1>FELIZ COFFEE</h1>
+        </a>
+        </div>
+        <ul class="list">
+            <li class="list__item"><a href="../Main_page/index.html" class="list__link">О нас</a></li>
+            <li class="list__item"><a href="../О нас/index.html" class="list__link">Контакты</a></li>
+            <li class="list__item"><a href="../Наши точки/map.html" class="list__link">Наши точки</a></li>
+            <li class="list__item"><a href="../меню/index.html" class="list__link">Меню</a></li>
+        </ul>
+    </header>
+    <div class="background">
+    </div>
+    <div class="content">
+        <div class="content__item">
+            <h2 class="content__title">FELIZ COFFEE</h2>
+            <p class="content_p">кофе, которое сделано с любовью</p>
+            <div class="hearts">
+                <img src="img/heart1.svg" alt="" class="heart1">
+                <img src="img/heart2.svg" alt="" class="heart2">
+            </div>
+        </div>
+        <div class="content__imgs">
+            <img class="content_img1" src="img/IMG_7679.png" alt="">
+            <img class="content_img2" src="img/IMG_7703.png" alt="">
+            <div class="block">
+                <div class="cups__block">
+                    <h2>Подробнее о технологии приготовления кофе</h2>
+                    <img class="coffee_cup" src="img/coffee-cup.svg" alt="">
+                </div>
+                <img src="img/IMG_7621.png" alt="" class="block_img1">
+                <img src="img/IMG_7633.png" alt="" class="block_img2">
+            </div>
+            <div class="arabic_imgs">
+                <div class="text">
+                    <p>100% <br>Арабика</p>
+                </div>
+                <img class="ohranik" src="img/IMG_7730.png" alt="">
+            </div>
+            <img class="img7713" src="img/IMG_7713.png" alt="">
+            <p class="nahuy">Только хорошее настроение</p>
+        </div>
+    </div>
+
+    
+    <div class="background2"></div>
+    <div id="block"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+    <script src="./js/Three.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
+
+
+    <script>
+        let block = document.getElementById('block')
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 5000);
+        camera.position.z = 100
+
+        renderer = new THREE.WebGLRenderer({
+            alpha: true,
+            antialias: true
+        })
+        renderer.setClearColor(0x000000, 0)
+        renderer.setSize(1920, 1080)
+
+        renderer.domElement.setAttribute('id', 'christmas-ball')
+        block.insertBefore(renderer.domElement, block.firstChild)
+
+        const aLight = new THREE.AmbientLight(0x404040, 1.2)
+        const pLight = new THREE.PointLight(0xFFFFFF, 1.2)
+        scene.add(aLight)
+        pLight.position.set(600, 600, 600)
+        scene.add(pLight)
+
+        let loader = new THREE.GLTFLoader()
+        let obj = null;
+        loader.load('feliz/scene.gltf', function(gltf) {
+            obj = gltf
+            obj.scene.scale.set(1.5, 1.5, 1.5)
+
+            scene.add(obj.scene)
+        });
+        
+
+        function animate() {
+            requestAnimationFrame(animate)
+            renderer.render(scene, camera)
+            obj.scene.rotation.y -= 0.01
+            camera.position.y = 30
+        }
+        animate()
+    </script>
+    <style>       
+    #block{
+        position: relative;
+        width: 1520px !important;
+        height: 750px !important;
+    }
+        #christmas-ball {
+            top: -300px;
+            position: absolute;
+            z-index: 10;
+            width: 100% !important;
+            height: 100% !important;
+        }
+    </style>
+
+
+
+
+</body>
+</html>

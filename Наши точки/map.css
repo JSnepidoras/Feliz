@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+html,
+body{
+display: relative;
+    width: 99.98%;
+height: 100%;
+padding: 0;
+margin: 0;
+font-family: Inter;
+background:url('img/Subtract.png') no-repeat center/cover;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background-color: white;
+    height: 87px;
+    padding-right: 0.02%;
+}
+.block__logo{
+    width: 12%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 4.234%;
+}
+.block__logo img{
+    width: 35%;
+    height: 60%;
+}
+.block__logo h1{
+    width: 51%;
+    height: 64.38%;
+    font-size: 24px;
+    color: #17453B;
+    line-height: 28px;
+}
+.list{
+    margin: 0;
+    padding-right: 0;
+    margin-right: 14.4595%;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.list__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 60%;
+    font-size: 18px;
+    list-style: none;
+
+}
+.list__link{
+    text-decoration: none;
+    color: #17453B;
+}
+#Bmap{
+    display: flex;
+    width: 92%;
+    height: 92%;
+    margin:auto;
+    margin-top:5%; 
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(82.9012px);
+    /* Note: backdrop-filter has minimal browser support */
+    
+    border-radius: 30px;
+}
+
+#razakova{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 30px 30px 0 0;
+    width: 90%;
+    height: 90%;
+    margin-left: 5%;
+    margin-top: 400px;
+    margin: auto;
+}
+#kydykeeva{
+    display: none;
+    border: 1px solid black;
+    border-radius: 30px 30px 0 0;
+    width: 90%;
+    height: 90%;
+    margin-left: 5%;
+    margin-top: 400px;
+    margin: auto;
+}
+.list__item1{
+    list-style: none;
+}
+#change{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    margin: center;
+    /* margin-bottom:-70px; */
+}
+@media(max-width:1079px){
+    .list__link{
+  font-size: 16px;
+  
+}
+header h1{
+    font-size:32px !important;
+      }
+}
+@media(max-width:963px){
+    .list__link{
+  font-size: 14px;
+}
+header h1{
+    font-size:24px !important;
+      }
+}
+@media(max-width:844px){
+    .list__link{
+  font-size: 12px;
+  }
+  header h1{
+    font-size:24px !important;
+      }
+}
+  @media(max-width:722px){
+    .list__link{
+  font-size: 10px;}
+  header h1{
+    font-size:20px !important;
+      }
+  }
+  @media(max-width:600px){
+    .list__link{
+  font-size: 8px;}
+  header h1{
+font-size:16px !important;
+    }
+.list__item1{
+    list-style: none;
+    /* margin-right: 500px; */
+}
+}
+
+@media(max-width:486px){
+    .list__link{
+  font-size: 8px;}
+  header h1{
+font-size:16px !important;
+    }
+.list__item1{
+    list-style: none;
+    margin-right: 50px;
+}
+}
+
